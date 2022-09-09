@@ -135,7 +135,7 @@ public class calculator_project extends JFrame implements ActionListener {
         p7.add(pass);
         p8.add(ok);
 
-       jf.add(p7);
+        jf.add(p7);
         jf.add(p8);
         jf.add(p1);
         jf.add(p2);
