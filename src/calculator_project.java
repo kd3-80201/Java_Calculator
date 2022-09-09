@@ -84,7 +84,6 @@ public class calculator_project extends JFrame implements ActionListener {
         b22.setForeground(Color.white);
         b23 = new JButton("AC");
 
-//        Font so =(new Font("black Times New Roman",Font.BOLD,20));
         //For User Login
         userL=new JLabel("Username");
         userL.setFont(so);
