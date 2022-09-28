@@ -195,17 +195,18 @@ public class calculator_project extends JFrame implements ActionListener {
                 conn= DriverManager.getConnection("JDBC:mysql://localhost:3306/live", "root", "AfnanBaig@123"); //syntax for connecting to MySQLWorkbench
                 st=conn.createStatement();
                 rs = st.executeQuery("select * from login");
-                rs.next();
-
-                bs = rs.getString("userName");
-                dk = rs.getString("passWord");
+                bs = null;
+                dk = null;
+                while (rs.next()){
+                    bs = rs.getString("userName");
+                    dk = rs.getString("passWord");
+                }
 
                 na = user.getText();
                 pa = String.valueOf(pass.getPassword());
 
                 //user and password compared here
                 if ((na.equals(bs)) && (pa.equals(dk))) {
-
                     //If password is correct then calculator will be shown to the user
                     p1.setVisible(true);
                     p2.setVisible(true);
@@ -217,7 +218,6 @@ public class calculator_project extends JFrame implements ActionListener {
                     //login,password panel goes false
                     p7.setVisible(false);
                     p8.setVisible(false);
-
                 }
                 else {
                     JOptionPane.showMessageDialog(null,"Invalid!Try again."); //For invalid password
